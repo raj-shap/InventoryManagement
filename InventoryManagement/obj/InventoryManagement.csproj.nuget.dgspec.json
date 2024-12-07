@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RJ\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj": {}
+    "C:\\Users\\Height8\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RJ\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj": {
+    "C:\\Users\\Height8\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RJ\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj",
+        "projectUniqueName": "C:\\Users\\Height8\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj",
         "projectName": "InventoryManagement",
-        "projectPath": "C:\\Users\\RJ\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj",
-        "packagesPath": "C:\\Users\\RJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RJ\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\obj\\",
+        "projectPath": "C:\\Users\\Height8\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj",
+        "packagesPath": "C:\\Users\\Height8\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Height8\\source\\repos\\raj-shap\\InventoryManagement\\InventoryManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\RJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Height8\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

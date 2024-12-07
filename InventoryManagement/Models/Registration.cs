@@ -4,8 +4,8 @@ namespace InventoryManagement.Models
 {
 	public class Registration
 	{
-		[Required]
-		public string UserID { get; set; }
+		//[Required]
+		//public string UserID { get; set; }
 		[Required]
 		public string Name { get; set; }
 		[Required]

@@ -19,6 +19,7 @@ namespace InventoryManagement.Controllers
 		{
 			return View();
 		}
+
 		[HttpPost]
 		public IActionResult Login(Login login)
 		{
@@ -29,6 +30,25 @@ namespace InventoryManagement.Controllers
 			if(response.IsSuccessStatusCode)
 			{
 				TempData["Login_Message"] = "Login Successfully...";
+				return RedirectToAction("Index", "Home");
+			}
+			return View();
+		}
+		[HttpGet]
+		public IActionResult Registration()
+		{
+			return View();
+		}
+		[HttpPost]
+		public IActionResult Registration(Registration registration)
+		{
+			string url = $"{_Baseurl}/Registration";
+			string data = JsonConvert.SerializeObject(registration);
+			StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+			HttpResponseMessage response = client.PostAsync(url, content).Result;
+			if (response.IsSuccessStatusCode)
+			{
+				TempData["Registration_Message"] = "Registration Successfully...";
 				return RedirectToAction("Index", "Home");
 			}
 			return View();
