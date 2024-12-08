@@ -43,15 +43,37 @@ namespace InventoryManagement.Controllers
 		public IActionResult Registration(Registration registration)
 		{
 			string url = $"{_Baseurl}/Registration";
+            registration.dto_UserID = "string";
+			//registration.dto_CreatedOn = DateTime.Now;
+			//registration.dto_ModifiedOn = DateTime.Now;
+			registration.dto_Role = "User";
+			//registration.dto_CreatedBy = "User";
+			registration.dto_CreatedBy = registration.dto_Name;
+			registration.dto_ModifiedBy = "User";
 			string data = JsonConvert.SerializeObject(registration);
 			StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
 			HttpResponseMessage response = client.PostAsync(url, content).Result;
-			if (response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
 			{
 				TempData["Registration_Message"] = "Registration Successfully...";
 				return RedirectToAction("Index", "Home");
 			}
-			return View();
+			else
+			{
+				string errorMessage = response.Content.ReadAsStringAsync().Result;
+				try
+				{
+                    //dynamic errorDetails = JsonConvert.DeserializeObject(errorMessage);
+					Console.WriteLine("hello");
+					//TempData["Registration_Error"] = errorDetails?.detail ?? "An error occured during registration.";
+					TempData["Registration_Error"] = errorMessage?? "An error occured during registration.";
+				}
+				catch
+				{
+					TempData["Registration_Error"] = "An error occured during registration.";
+				}
+				return View();
+			}
 		}
 	}
 }

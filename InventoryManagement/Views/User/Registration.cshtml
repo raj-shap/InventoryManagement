@@ -3,27 +3,65 @@
 <div class="container">
     <h1>Registration</h1>
     <hr />
+
+    @if(TempData["Registration_Error"] != null)
+    {
+        <div class="alert alert-danger" id="error-message">
+            @TempData["Registration_Error"]
+        </div>
+    }
+
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <form asp-action="Registration">
                 <div asp-validation-summery="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <label asp-for="dto_Name" class="control-label"></label>
+                    <input asp-for="dto_Name" class="form-control" />
+                    <span asp-validation-for="dto_Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <label asp-for="dto_Email" class="control-label"></label>
+                    <input asp-for="dto_Email" class="form-control" />
+                    <span asp-validation-for="dto_Email" class="text-danger"></span>
+                </div>
+                @* <div class="form-group">
+                    <label asp-for="dto_Role" class="control-label"></label>
+                    <input asp-for="dto_Role" class="form-control" />
+                    <span asp-validation-for="dto_Role" class="text-danger"></span>
+                </div> *@
+                <div class="form-group">
+                    <label asp-for="dto_UserName" class="control-label"></label>
+                    <input asp-for="dto_UserName" class="form-control" />
+                    <span asp-validation-for="dto_UserName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="UserName" class="control-label"></label>
-                    <input asp-for="UserName" class="form-control" />
-                    <span asp-validation-for="UserName" class="text-danger"></span>
+                    <label asp-for="dto_phone" class="control-label"></label>
+                    <input asp-for="dto_phone" class="form-control" />
+                    <span asp-validation-for="dto_phone" class="text-danger"></span>
                 </div>
-
+                <div class="form-group">
+                    <label asp-for="dto_Password" class="control-label"></label>
+                    <input asp-for="dto_Password" class="form-control" />
+                    <span asp-validation-for="dto_Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="dto_ConfirmPassowrd" class="control-label"></label>
+                    <input asp-for="dto_ConfirmPassowrd" class="form-control" />
+                    <span asp-validation-for="dto_ConfirmPassowrd" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Register" class="btn btn-primary" />
+                </div>
             </form>
         </div>
     </div>
 </div>
+
+<script>
+    setTimeout(() => {
+        const errorMessage = document.getElementById("error-message");
+        if (errorMessage) errorMessage.classList.add("fade-out");
+    }, 2000);
+</script>

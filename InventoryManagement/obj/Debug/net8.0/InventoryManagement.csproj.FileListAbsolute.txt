@@ -217,3 +217,4 @@ C:\Users\Height8\source\repos\raj-shap\InventoryManagement\InventoryManagement\o
 C:\Users\Height8\source\repos\raj-shap\InventoryManagement\InventoryManagement\obj\Debug\net8.0\InventoryManagement.pdb
 C:\Users\Height8\source\repos\raj-shap\InventoryManagement\InventoryManagement\obj\Debug\net8.0\InventoryManagement.genruntimeconfig.cache
 C:\Users\Height8\source\repos\raj-shap\InventoryManagement\InventoryManagement\obj\Debug\net8.0\ref\InventoryManagement.dll
+C:\Users\RJ\source\repos\raj-shap\InventoryManagement\InventoryManagement\obj\Debug\net8.0\InventoryManagement.sourcelink.json

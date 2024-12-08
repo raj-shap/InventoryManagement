@@ -2,7 +2,22 @@
     ViewData["Title"] = "Home Page";
 }
 
+@if (TempData["Registration_Message"] != null)
+{
+    <div id="success-message" class="alert alert-success">
+        @TempData["Registration_Message"]
+    </div>
+}
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<script>
+    setTimeout(() => {
+        const successMessage = document.getElementById("success-message");
+        if (successMessage) successMessage.classList.add("fade-out");
+    }, 2000);
+    
+</script>

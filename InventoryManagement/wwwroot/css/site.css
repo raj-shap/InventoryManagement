@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.fade-out{
+    transition: opacity is ease-out;
+    opacity : 0;
+}
