@@ -40,7 +40,7 @@ namespace InventoryManagement.Controllers
 			return View();
 		}
 		[HttpPost]
-		public IActionResult Registration(Registration registration)
+		public async Task<IActionResult> Registration(Registration registration)
 		{
 			string url = $"{_Baseurl}/Registration";
             registration.dto_UserID = "string";
@@ -50,9 +50,12 @@ namespace InventoryManagement.Controllers
 			//registration.dto_CreatedBy = "User";
 			registration.dto_CreatedBy = registration.dto_Name;
 			registration.dto_ModifiedBy = "User";
+
 			string data = JsonConvert.SerializeObject(registration);
 			StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+
 			HttpResponseMessage response = client.PostAsync(url, content).Result;
+
             if (response.IsSuccessStatusCode)
 			{
 				TempData["Registration_Message"] = "Registration Successfully...";
@@ -60,13 +63,19 @@ namespace InventoryManagement.Controllers
 			}
 			else
 			{
-				string errorMessage = response.Content.ReadAsStringAsync().Result;
+                var errorMessage = await response.Content.ReadAsStringAsync();
+				//string errorMessage = response.Content.ReadAsStringAsync().Result;
+				//string errorMessage = response.Content.ReadAsStringAsync().Result;
+
 				try
 				{
-                    //dynamic errorDetails = JsonConvert.DeserializeObject(errorMessage);
-					Console.WriteLine("hello");
+					var error = JsonConvert.DeserializeObject<Dictionary<string, string>>(errorMessage);
+					TempData["Registration_Error"] = string.Join(", ", error.Values);
+					//dynamic errorDetails = JsonConvert.DeserializeObject<Registration>(errorMessage);
+
 					//TempData["Registration_Error"] = errorDetails?.detail ?? "An error occured during registration.";
-					TempData["Registration_Error"] = errorMessage?? "An error occured during registration.";
+					//TempData["Registration_Error"] = errorMessage?? "An error occured during registration.";
+					//TempData["Registration_Error"] = errorMessage;
 				}
 				catch
 				{

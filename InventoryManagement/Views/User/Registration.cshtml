@@ -3,8 +3,18 @@
 <div class="container">
     <h1>Registration</h1>
     <hr />
+    @* @if (ViewBag.Registration_Error != null && ViewBag.Registration_Error.Count > 0)
+    {
+        <div class="alert alert-danger" id="error-message">
+            @foreach (var error in ViewBag.Registration_Error)
+            {
+                @error
+            }
+        </div>
+    } *@
+    
 
-    @if(TempData["Registration_Error"] != null)
+@if(TempData["Registration_Error"] != null)
     {
         <div class="alert alert-danger" id="error-message">
             @TempData["Registration_Error"]
@@ -60,8 +70,9 @@
 </div>
 
 <script>
+    
     setTimeout(() => {
         const errorMessage = document.getElementById("error-message");
         if (errorMessage) errorMessage.classList.add("fade-out");
-    }, 2000);
+    }, 10000);
 </script>
